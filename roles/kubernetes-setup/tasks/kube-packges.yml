@@ -11,6 +11,8 @@
 - name: Stop firwalld if running
   when: ansible_os_family == "RedHat"
   command: systemctl stop firewalld
+  async: 30
+  poll: 0
   ignore_errors: yes
   delegate_to: '{{ item }}'
   with_items: "{{ groups['cluster'] }}"
