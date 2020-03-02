@@ -2,8 +2,8 @@
 - name: Disable SWAP
   when: ansible_swaptotal_mb > 0
   shell: |
-    /usr/bin/sed -i '/swap/d' /etc/fstab
-    /usr/sbin/swapoff -a
+    sudo /usr/bin/sed -i '/swap/d' /etc/fstab
+    sudo /usr/sbin/swapoff -a
   delegate_to: '{{ item }}'
   with_items: "{{ groups['cluster'] }}"
 
