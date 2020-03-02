@@ -36,6 +36,7 @@
     url: https://download.docker.com/linux/centos/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
     mode: 0644 
+  become: yes
   delegate_to: '{{ item }}'
   with_items: "{{ groups['cluster'] }}"
 
