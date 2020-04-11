@@ -4,8 +4,8 @@
 #
 - name: Bring private ip of remote master server
   set_fact:
-    mprivateip: "{{ ansible_default_ipv4_address }}"
-    #mprivateip: "{{ ansible_all_ipv4_addresses }}"
+  #  mprivateip: "{{ ansible_default_ipv4_address }}"
+    mprivateip: "{{ ansible_all_ipv4_addresses }}"
   delegate_to: "{{ item }}"
   delegate_facts: true
   with_items: "{{ groups['master'] }}"
