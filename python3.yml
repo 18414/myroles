@@ -32,7 +32,7 @@
         src: /tmp/Python-3.7.2.tgz
         dest: /usr/src/python3
         extra_opts: [--strip-components=1]
-  
+        remote_src: true
     - name: Execute commands 
       shell: ./configure
       args: 
